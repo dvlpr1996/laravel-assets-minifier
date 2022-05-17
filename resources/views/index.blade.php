@@ -12,7 +12,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ url("img/icon.ico") }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/icon.ico') }}">
 <meta name="theme-color" content="#2F80ECff">
 <meta name="msapplication-navbutton-color" content="#2F80ECff">
 <meta name="apple-mobile-web-app-status-bar-style" content="#2F80ECff">
@@ -24,7 +24,6 @@
 	<![endif] -->
 
 <body class="bg-primary px-4 py-4 font-['Open_Sans'] capitalize sm:py-0">
-
 		<main class="flex h-auto items-center justify-center sm:h-screen">
 				<div class="w-[500px] rounded-xl bg-white p-5 text-center">
 						<div class="space-y-3 text-center">
@@ -35,8 +34,9 @@
 
 						<div class="my-6 mx-auto">
 								<div class="uploader">
-										<form action="upload.php" method="POST" id="uploader" enctype="multipart/form-data"
+										<form action="{{ route('upload') }}" method="POST" id="uploader" enctype="multipart/form-data"
 												class="flex h-full flex-col items-center justify-center gap-5">
+												@csrf
 												<i id="icon" class="fa fa-upload text-5xl"></i>
 												<input type="file" name="file" id="file-input"
 														class="absolute top-0 left-0 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-0">
