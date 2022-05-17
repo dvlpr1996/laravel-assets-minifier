@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.uploader {
+		@apply border-primary relative h-52 border-4 border-dashed p-3 rounded-xl;
+	}
+
+	.active {
+		@apply border-4 border-solid border-primary;
+	}
+
+	.img-uploaded {
+		@apply w-full h-full object-cover rounded-md absolute inset-0 p-0 m-0;
+	}
+
+	.btn {
+		@apply py-3 px-16 border-none outline-none rounded-[50px] text-white capitalize select-none
+		cursor-pointer bg-primary mt-5 hover:bg-btn-hover;
+	}
+}
