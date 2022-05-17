@@ -32,14 +32,23 @@
 										them</p>
 						</div>
 
+						@if ($errors->any())
+								<div>
+										<ul>
+												@foreach ($errors->all() as $error)
+														<li>{{ $error }}</li>
+												@endforeach
+										</ul>
+								</div>
+						@endif
 						<div class="my-6 mx-auto">
 								<div class="uploader">
 										<form action="{{ route('upload') }}" method="POST" id="uploader" enctype="multipart/form-data"
 												class="flex h-full flex-col items-center justify-center gap-5">
 												@csrf
 												<i id="icon" class="fa fa-upload text-5xl"></i>
-												<input type="file" name="file" id="file-input"
-														class="absolute top-0 left-0 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-0">
+												<input type="file" name="files[]" id="file-input"
+														class="absolute top-0 left-0 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-0" multiple>
 
 												<div class="select-none">
 														<h3>Drag and drop your files or click here</h3>

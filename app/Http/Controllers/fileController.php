@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\FileUploadRequest;
 
 class fileController extends Controller
 {
@@ -11,7 +11,7 @@ class fileController extends Controller
 		return view("index");
 	}
 
-	public function upload(Request $request)
+	public function upload(FileUploadRequest $request)
 	{
 		
 	}
