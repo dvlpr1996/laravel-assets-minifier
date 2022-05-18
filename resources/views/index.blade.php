@@ -23,8 +23,8 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<![endif] -->
 
-<body class="bg-primary px-4 font-['Open_Sans'] capitalize sm:py-0">
-		<main class="flex h-screen items-center justify-center">
+<body class="bg-primary px-4 font-['Open_Sans'] capitalize py-4 xs:py-0">
+		<main class="flex items-center justify-center h-auto xs:h-screen">
 				<div class="w-[500px] rounded-xl bg-white p-5 text-center">
 
 						<div class="space-y-3 text-center">
