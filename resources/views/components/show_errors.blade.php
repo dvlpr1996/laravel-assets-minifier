@@ -1,5 +1,5 @@
 @if ($errors->any())
-		<div class="mb-2 w-full rounded-lg bg-red-200 p-3 text-base font-bold text-red-700">
+		<div class="my-3 w-full rounded-lg bg-red-200 p-3 text-base font-bold text-red-700">
 				<ul class="flex flex-col justify-start">
 						@foreach ($errors->all() as $error)
 								<li class="my-1 inline-flex items-center">
