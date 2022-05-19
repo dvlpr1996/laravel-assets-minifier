@@ -23,8 +23,8 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<![endif] -->
 
-<body class="bg-primary px-4 font-['Open_Sans'] capitalize py-4 xs:py-0">
-		<main class="flex items-center justify-center h-auto xs:h-screen">
+<body class="bg-primary xs:py-0 px-4 py-4 font-['Open_Sans'] capitalize">
+		<main class="xs:h-screen flex h-auto items-center justify-center">
 				<div class="w-[500px] rounded-xl bg-white p-5 text-center">
 
 						<div class="space-y-3 text-center">
@@ -56,7 +56,9 @@
 								<button type="submit" name="upload" class="btn" form="uploader">upload</button>
 						</div>
 
-						
+						@if (false)
+								<x-show_file_info></x-show_file_info>
+						@endif
 
 				</div>
 		</main>
