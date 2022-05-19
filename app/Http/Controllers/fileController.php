@@ -13,6 +13,16 @@ class fileController extends Controller
 
 	public function upload(FileUploadRequest $request)
 	{
-		
+
+	}
+
+	public function download(FileUploadRequest $request)
+	{
+
+	}
+
+	public function delete(FileUploadRequest $request)
+	{
+
 	}
 }

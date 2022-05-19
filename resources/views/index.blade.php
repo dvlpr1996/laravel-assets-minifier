@@ -43,7 +43,7 @@
 												class="flex h-full flex-col items-center justify-center gap-5">
 												@csrf
 												<i id="icon" class="fa fa-upload text-5xl"></i>
-												<input type="file" name="files" id="file-input"
+												<input type="file" name="files[]" id="file-input"
 														class="absolute top-0 left-0 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-0" multiple>
 
 												<div class="select-none">
@@ -56,18 +56,7 @@
 								<button type="submit" name="upload" class="btn" form="uploader">upload</button>
 						</div>
 
-						@if (false)
-								<div class="border-primary mt-3 flex items-center justify-evenly rounded-xl border-2 border-solid py-4 px-1">
-										<span>original size : 000 KB</span>
-										<span>optimize size : 000 KB</span>
-										<a href="#" class="text-dark cursor-pointer">
-												<i class="fa fa-download text-xl" title="download file"></i>
-										</a>
-										<a href="#" class="text-dark cursor-pointer">
-												<i class="fas fa-trash-alt text-xl" title="delete file"></i>
-										</a>
-								</div>
-						@endif
+						
 
 				</div>
 		</main>

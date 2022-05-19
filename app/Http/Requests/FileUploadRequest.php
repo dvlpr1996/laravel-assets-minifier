@@ -27,14 +27,16 @@ class FileUploadRequest extends FormRequest
 		return [
 			"files" =>
 			[
-				"file", "required", "min:1", "max:2000",
-				"mimes:png,jpg,css,js,html"
+				"file", "required", "min:1", "max:2000", "filled",
+				"mimetypes:image/png,text/javascript,text/css
+				,image/jpeg,application/x-javascript,application/javascript"
 			],
 
 			"files.*" =>
 			[
-				"file", "required", "min:1", "max:2000",
-				"mimes:png,jpg,css,js,html"
+				"file", "required", "min:1", "max:2000", "filled",
+				"mimetypes:image/png,text/javascript,text/css
+				,image/jpeg,application/x-javascript,application/javascript"
 			]
 
 		];
