@@ -25,20 +25,11 @@ class FileUploadRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			"files" =>
-			[
-				"file", "required", "min:1", "max:2000", "filled",
-				"mimetypes:image/png,text/javascript,text/css
-				,image/jpeg,application/x-javascript,application/javascript"
-			],
-
-			"files.*" =>
-			[
-				"file", "required", "min:1", "max:2000", "filled",
-				"mimetypes:image/png,text/javascript,text/css
-				,image/jpeg,application/x-javascript,application/javascript"
+			"files" => ["required"],
+			"files.*" => [
+				"file", "min:1", "max:2000", "filled",
+				"mimes:png,jpeg,css,html,js"
 			]
-
 		];
 	}
 }

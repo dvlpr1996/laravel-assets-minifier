@@ -47,8 +47,10 @@ return [
     'ends_with' => 'The :attribute must end with one of the following: :values.',
     'enum' => 'The selected :attribute is invalid.',
     'exists' => 'The selected :attribute is invalid.',
+
     'file' => 'you must upload a file',
     'filled' => 'You have not uploaded any file',
+
     'gt' => [
         'array' => 'The :attribute must have more than :value items.',
         'file' => 'The :attribute must be greater than :value kilobytes.',
@@ -88,8 +90,10 @@ return [
         'numeric' => 'The :attribute must not be greater than :max.',
         'string' => 'The :attribute must not be greater than :max characters.',
     ],
+
     'mimes' => 'type of file is not valid try again.',
     'mimetypes' => 'type of file is not valid try again.',
+		
     'min' => [
         'array' => 'file must have at least :min items.',
         'file' => 'file must be at least :min KB.',
