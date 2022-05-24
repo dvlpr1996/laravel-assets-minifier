@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\FileUploadRequest;
-use Illuminate\Http\File;
+use App\Services\StorageManager;
 
 class fileController extends Controller
 {
+	private $filename;
+	private $pathToDownload;
+	private $StorageManager;
+
+	public function __construct(StorageManager $StorageManager)
+	{
+		$this->filename = time() . mt_rand() . "-Laravel-minifier.zip";
+		$this->pathToDownload = storage_path("app/public/download/" . $this->filename);
+		$this->StorageManager = $StorageManager;
+	}
+
 	public function index()
 	{
 		return view("index");
@@ -15,16 +25,23 @@ class fileController extends Controller
 
 	public function upload(FileUploadRequest $request)
 	{
-		return back()->with("success","your files successfully uploaded");
+		if ($request->hasFile("files")) {
+			foreach ($request->file("files") as $files) {
+				$files->store("upload");
+			}
+		}
+		return back()->with("success", "your files successfully uploaded");
 	}
 
-	public function download(FileUploadRequest $request)
-	{
-
+	public function download()
+	{	
+		// delete after downloaded
+		return $this->StorageManager->download($this->pathToDownload);
 	}
 
-	public function delete(FileUploadRequest $request)
+	public function delete()
 	{
-
+		$this->StorageManager->delete("upload");
+		return back()->with("success", "your files successfully deleted");
 	}
 }
