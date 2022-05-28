@@ -30,14 +30,16 @@ class FileHandler
 	{
 	}
 
-	public function randomFileName()
+	public function randomFileName($request)
 	{
-		return "laravel-minifier-" . mt_rand(1, time());
+		return "laravel-minifier-" . mt_rand(1, time()) .  "." . $request->extension();
+		// pathinfo(storage_path('app/public/upload/img/$value'), PATHINFO_EXTENSION);
 	}
 
 	public function checkDirExists(string $action, string $msg = "deleted")
 	{
-		if (empty(Storage::allDirectories($action))) {
+		($action == "upload") ? $method = "allDirectories" : $method = "exists";
+		if (empty(Storage::$method($action))) {
 			throw new Exception('There is no file to' . " " . $msg);
 		}
 	}
