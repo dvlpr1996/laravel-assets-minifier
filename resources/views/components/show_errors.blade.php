@@ -1,3 +1,20 @@
+@if (session('success'))
+		<div class="my-3 w-full rounded-lg bg-green-200 p-3 text-base font-bold text-green-700">
+				<p class="my-1 text-left">
+						{{ session('success') }}
+				</p>
+		</div>
+@endif
+
+
+@if (session('error'))
+		<div class="my-3 w-full rounded-lg bg-red-200 p-3 text-base font-bold text-red-700">
+				<p class="my-1 text-left">
+						{{ session('error') }}
+				</p>
+		</div>
+@endif
+
 @if ($errors->any())
 		<div class="my-3 w-full rounded-lg bg-red-200 p-3 text-base font-bold text-red-700">
 				<ul class="flex flex-col justify-start">
